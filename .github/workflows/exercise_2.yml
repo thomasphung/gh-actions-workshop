@@ -1,0 +1,7 @@
+# Create a workflow that calculates the hypotenuse of a right triangle given 2 sides:
+# - Runs when manually triggered
+# - Inputs are the lengths of the 2 sides
+# - Print the hypotenuse value in the logs
+# - Design this using 2+ jobs where you are moving data between jobs using outputs and needs
+
+name: Calculate the Hypotenuse
