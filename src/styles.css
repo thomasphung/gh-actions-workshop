@@ -1,0 +1,226 @@
+:root {
+    font-family: 'Manrope', sans-serif;
+    color: #1f1720;
+    background:
+        radial-gradient(circle at top left, rgba(255, 216, 177, 0.85), transparent 30%),
+        radial-gradient(circle at right, rgba(255, 130, 92, 0.14), transparent 28%),
+        linear-gradient(180deg, #fff9f0 0%, #fef2dc 100%);
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+#root {
+    width: 100%;
+}
+
+.page-shell {
+    width: min(1040px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 56px;
+}
+
+.hero-card,
+.entry-card,
+.ratings-panel,
+.rating-card {
+    border: 1px solid rgba(89, 58, 43, 0.12);
+    box-shadow: 0 18px 45px rgba(111, 71, 48, 0.09);
+}
+
+.hero-card {
+    background: linear-gradient(135deg, #fffaf3, #ffe7c7);
+    border-radius: 28px;
+    padding: 28px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: #b05831;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 0.98;
+}
+
+.hero-copy {
+    max-width: 620px;
+    margin: 14px 0 0;
+    color: #684d42;
+    font-size: 1rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.entry-card,
+.ratings-panel {
+    background: rgba(255, 253, 248, 0.94);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+}
+
+.entry-card {
+    display: grid;
+    gap: 10px;
+    padding: 22px;
+    align-content: start;
+}
+
+.entry-card h2,
+.ratings-panel h2 {
+    font-size: 1.6rem;
+}
+
+.entry-card label {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #6e5347;
+}
+
+.entry-card input {
+    width: 100%;
+    border: 1px solid rgba(89, 58, 43, 0.18);
+    border-radius: 14px;
+    background: white;
+    padding: 12px 14px;
+}
+
+.entry-card input:focus {
+    outline: 2px solid rgba(255, 130, 92, 0.35);
+    border-color: #ff825c;
+}
+
+.entry-card button {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff825c, #ffb86b);
+    color: white;
+    padding: 13px 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.entry-card button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(255, 130, 92, 0.28);
+}
+
+.ratings-panel {
+    padding: 22px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.panel-heading span {
+    color: #8c6b5a;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.rating-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.rating-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 241, 223, 0.95));
+    border-radius: 20px;
+    padding: 18px;
+}
+
+.card-label {
+    margin: 0 0 5px;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #a27966;
+    font-weight: 800;
+}
+
+.rating-card h3 {
+    font-size: 1.35rem;
+}
+
+.score-badge {
+    min-width: 82px;
+    display: grid;
+    justify-items: center;
+    padding: 12px 10px;
+    border-radius: 18px;
+    background: #1f1720;
+    color: #fff8ef;
+}
+
+.score-badge span {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.score-badge small {
+    opacity: 0.72;
+}
+
+@media (max-width: 760px) {
+    .page-shell {
+        width: min(100% - 20px, 1040px);
+        padding-top: 18px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rating-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
