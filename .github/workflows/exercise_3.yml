@@ -12,6 +12,9 @@ jobs:
   create-pull-request:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
       - name: Health check on repo
         run: ./actions/repo_health_report.sh
 
