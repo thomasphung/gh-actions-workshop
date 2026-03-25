@@ -16,18 +16,23 @@ jobs:
     create-file:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
+
             - name: Create a new file
               run: |
                 touch new_file.md
                 echo "${{ inputs.file_contents }}" >> new_file.md
                 echo "File 'new_file.md' has been created."
                 cat new_file.md
-            - uses: actions/upload-artifact@v4
+
+            - name: Commit and push new file
+              uses: stefanzweifel/git-auto-commit-action@v5
               with:
-                name: new_markdown_file
-                path: new_file.md
-            - name: Checkout repository
-              uses: actions/checkout@v6
+                commit_message: "Add new file.md"
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
             - name: Create an issue using action
               uses: JasonEtco/create-an-issue@v2
               env:
